@@ -1,4 +1,4 @@
-# Algoritmo CNN_Visdrone_paso_a_paso.ipynb
+# Algoritmo "ALamG-CNN\_Visdrone\_paso\_a\_paso.ipynb"
 
 # Análisis Vectorial y Matricial de una Red Neuronal Convolucional para Clasificación de Objetos en VisDrone
 
