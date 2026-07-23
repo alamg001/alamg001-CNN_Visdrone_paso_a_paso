@@ -1,4 +1,4 @@
-# CNN_Visdrone_paso_a_paso
+# Algoritmo CNN_Visdrone_paso_a_paso.ipynb
 
 # Análisis Vectorial y Matricial de una Red Neuronal Convolucional para Clasificación de Objetos en VisDrone
 
@@ -358,12 +358,20 @@ La CNN completa es una composición de transformaciones:
 
 
 $$
-\mathbf{h}_0 &= \sigma_0\!\left(\mathbf{W}_1 * \mathbf{x} + \mathbf{b}_1\right),\\
-  \mathbf{h}_1 &= \sigma_1\!\left(\operatorname{Pool}_1(\mathbf{h}_0)\right),\\
-  \mathbf{h}_2 &= \sigma_2\!\left(\operatorname{Pool}_2(\mathbf{h}_1)\right),\\
-  \mathbf{h}_3 &= \sigma_3\!\left(\operatorname{Pool}_3(\mathbf{h}_2)\right),\\
-  f(\mathbf{x}) &= \mathbf{W}_{fc}\mathbf{h}_3 + \mathbf{b}_{fc}.
+\begin{gathered}
+\mathbf{h}_0 =
+\sigma_0\left(\mathbf{W}_1 * \mathbf{x} + \mathbf{b}_1\right),\\
+\mathbf{h}_1 =
+\sigma_1\left(\mathrm{Pool}_1(\mathbf{h}_0)\right),\\
+\mathbf{h}_2 =
+\sigma_2\left(\mathrm{Pool}_2(\mathbf{h}_1)\right),\\
+\mathbf{h}_3 =
+\sigma_3\left(\mathrm{Pool}_3(\mathbf{h}_2)\right),\\
+f(\mathbf{x}) =
+\mathbf{W}_{\mathrm{fc}}\mathbf{h}_3 + \mathbf{b}_{\mathrm{fc}}.
+\end{gathered}
 $$
+  
 
 
 Cada $\sigma_k$ es la función ReLU, y cada $\text{Pool}_k$ es MaxPooling.
@@ -381,16 +389,29 @@ Cada $\sigma_k$ es la función ReLU, y cada $\text{Pool}_k$ es MaxPooling.
 El poder de una CNN reside en su capacidad para aprender características jerárquicas. Las capas tempranas aprenden características de bajo nivel (bordes, colores), mientras que las capas profundas aprenden características de alto nivel (partes de objetos, objetos completos).
 
 
+
 $$
-\begin{aligned}
-  \mathbf{x}   &\xrightarrow{\text{Capa 1}} \mathbf{h}_1
-    && \text{(características de bajo nivel)},\\
-  \mathbf{h}_1 &\xrightarrow{\text{Capa 2}} \mathbf{h}_2
-    && \text{(características de nivel medio)},\\
-  \mathbf{h}_2 &\xrightarrow{\text{Capa 3}} \mathbf{h}_3
-    && \text{(características de alto nivel)}.
-\end{aligned}
+\begin{gathered}
+\mathrm{Capa\ 1:}
+\qquad
+\mathbf{x}\longrightarrow\mathbf{h}_1
+\qquad
+\text{características de bajo nivel},
+\\
+\mathrm{Capa\ 2:}
+\qquad
+\mathbf{h}_1\longrightarrow\mathbf{h}_2
+\qquad
+\text{características de nivel medio},
+\\
+\mathrm{Capa\ 3:}
+\qquad
+\mathbf{h}_2\longrightarrow\mathbf{h}_3
+\qquad
+\text{características de alto nivel}.
+\end{gathered}
 $$
+
 
 ![Figura 4 5](Figura_4_5.png)
 
@@ -506,13 +527,46 @@ Cada paso del gradiente descendente mueve el punto representativo en el espacio 
 Adam (Adaptive Moment Estimation) es una extensión del gradiente descendente que utiliza momentos de primer y segundo orden para adaptar la tasa de aprendizaje para cada parámetro.
 
 
+
+
 $$
-\mathbf{m}_t &= \beta_1 \mathbf{m}_{t-1} + (1 - \beta_1) \nabla_{\boldsymbol{\theta}} J(\boldsymbol{\theta}_t) \\
-    \mathbf{v}_t &= \beta_2 \mathbf{v}_{t-1} + (1 - \beta_2) (\nabla_{\boldsymbol{\theta}} J(\boldsymbol{\theta}_t))^2 \\
-    \hat{\mathbf{m}}_t &= \frac{\mathbf{m}_t}{1 - \beta_1^t} \\
-    \hat{\mathbf{v}}_t &= \frac{\mathbf{v}_t}{1 - \beta_2^t} \\
-    \boldsymbol{\theta}_{t+1} &= \boldsymbol{\theta}_t - \eta \frac{\hat{\mathbf{m}}_t}{\sqrt{\hat{\mathbf{v}}_t} + \epsilon}
+\mathbf{m}_t =
+\beta_1\mathbf{m}_{t-1}
++
+(1-\beta_1)
+\nabla_{\boldsymbol{\theta}}
+J(\boldsymbol{\theta}_t)
 $$
+
+$$
+\mathbf{v}_t =
+\beta_2\mathbf{v}_{t-1}
++
+(1-\beta_2)
+\left(
+\nabla_{\boldsymbol{\theta}}
+J(\boldsymbol{\theta}_t)
+\right)^2
+$$
+
+$$
+\hat{\mathbf{m}}_t =
+\frac{\mathbf{m}_t}{1-\beta_1^t}
+$$
+
+$$
+\hat{\mathbf{v}}_t =
+\frac{\mathbf{v}_t}{1-\beta_2^t}
+$$
+
+
+$$
+\boldsymbol{\theta}_{t+1} = \boldsymbol{\theta}_t - \eta \frac{\hat{\mathbf{m}}_t}{\sqrt{\hat{\mathbf{v}}_t} + \epsilon}
+$$
+
+
+
+
 
 
 Cada operación es vectorial en $\mathbb{R}^P$.
@@ -589,15 +643,9 @@ Para cada celda $c$ en el mapa de características, YOLO predice:
 La salida de YOLO es un tensor $\mathbf{Y} \in \mathbb{R}^{H' \times W' \times (5 + 10)}$, donde cada celda produce un vector en $\mathbb{R}^{15}$. La pérdida de YOLO combina términos de clasificación y regresión:
 
 
+
 $$
-J_{\text{YOLO}}
-  &= \lambda_{\text{coord}}\sum_i\sum_j
-     \mathbf{1}_{ij}^{\text{obj}}
-     \left\lVert \operatorname{box}_{ij}
-     -\widehat{\operatorname{box}}_{ij}\right\rVert^2 \notag\\
-  &\quad+\sum_i\sum_j\mathbf{1}_{ij}^{\text{obj}}
-     \left\lVert\mathbf{p}_{ij}
-     -\widehat{\mathbf{p}}_{ij}\right\rVert^2+\cdots .
+J_{\text{YOLO}} = \lambda_{\text{coord}}\sum_i\sum_j \mathbf{1}_{ij}^{\text{obj}} \left\lVert \text{box}_{ij} -\widehat{\text{box}}_{ij}\right\rVert^2 + \sum_i\sum_j\mathbf{1}_{ij}^{\text{obj}} \left\lVert\mathbf{p}_{ij} -\widehat{\mathbf{p}}_{ij}\right\rVert^2+\cdots .
 $$
 
 
