@@ -233,7 +233,7 @@ Cada punto en este espacio representa una configuración completa de la CNN. El 
 
 #### Espacio de Par\'ametros de la CNN
 
-![figura 3 2](assets/figura_3_2.png)
+![figura 3 2](assets/Figura_3_2.png)
 
 > **Nota**
 >
