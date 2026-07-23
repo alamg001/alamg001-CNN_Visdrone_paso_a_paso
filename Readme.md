@@ -43,7 +43,7 @@ $$
 
 Para una imagen de $96 \times 96$ píxeles con 3 canales, tenemos $\mathbf{x} \in \mathbb{R}^{27648}$. Cada píxel $x_{c,i,j}$ representa una coordenada en este espacio de 27\,648 dimensiones.
 
-![Figura 1 1](Figura_1_1.png)
+![Figura 1 1](assets/Figura_1_1.png)
 
 
 ### Geometría del Espacio de Características
@@ -61,7 +61,7 @@ Donde $d$ es la dimensionalidad del espacio de características final (en nuestr
 
 #### Mapeo del Espacio de Entrada al Espacio de Características
 
-![Figura 1 2](Figura_1_2.png)
+![Figura 1 2](assets/Figura_1_2.png)
 
 > **Nota**
 >
@@ -80,7 +80,7 @@ PyTorch se destaca sobre otras librerías como NumPy por su capacidad para opera
 
 La representación de datos como `Tensor`s en PyTorch es análoga a trabajar con vectores y matrices en un sentido matemático, pero con la ventaja de que las operaciones son altamente optimizadas y diferenciables.
 
-![pytorch](pytorch.png)
+![pytorch](assets/pytorch.png)
 
 > **Nota**
 >
@@ -136,7 +136,7 @@ $$
 \text{Permute}: \mathbb{R}^{H \times W \times C} \to \mathbb{R}^{C \times H \times W}
 $$
 
-![Figura 2 1](Figura_2_1.png)
+![Figura 2 1](assets/Figura_2_1.png)
 
 > **Nota**
 >
@@ -154,7 +154,7 @@ $$
 
 Donde $B$ es el tamaño del lote. Esto permite la vectorización de las operaciones, procesando $B$ vectores de entrada simultáneamente.
 
-![Figura 2 2](Figura_2_2.png)
+![Figura 2 2](assets/Figura_2_2.png)
 
 > **Nota**
 >
@@ -208,7 +208,7 @@ El broadcasting es una extensión de las operaciones vectoriales que permite ope
 
 #### Convolución como producto matricial con matriz de Toeplitz
 
-![matriz toeplitz v4](matriz_toeplitz_v4.png)
+![matriz toeplitz v4](assets/matriz_toeplitz_v4.png)
 
 > **Nota**
 >
@@ -233,7 +233,7 @@ Cada punto en este espacio representa una configuración completa de la CNN. El 
 
 #### Espacio de Par\'ametros de la CNN
 
-![figura 3 2](figura_3_2.png)
+![figura 3 2](assets/figura_3_2.png)
 
 > **Nota**
 >
@@ -251,7 +251,7 @@ $$
 
 Donde $f$ se aplica a cada elemento del lote en paralelo. Esto es posible gracias a la naturaleza vectorial de las operaciones.
 
-![computacion vectorizada](computacion_vectorizada.png)
+![computacion vectorizada](assets/computacion_vectorizada.png)
 
 
 ## Arquitectura Matricial de la CNN
@@ -281,7 +281,7 @@ Donde $\mathbf{W}_{\text{toeplitz}}$ es una matriz de Toeplitz (o bloque-circula
 
 #### Convolucional como Transformación Lineal
 
-![convolucion](convolucion.png)
+![convolucion](assets/convolucion.png)
 
 > **Nota**
 >
@@ -320,7 +320,7 @@ $$
 
 Donde $\mathbf{W}_{\text{conv}}$ es una matriz que contiene todos los filtros en una estructura de bloques.
 
-![transformacion](transformacion.png)
+![transformacion](assets/transformacion.png)
 
 > **Nota**
 >
@@ -344,7 +344,7 @@ Esta es una operación de reducción de dimensionalidad no lineal que preserva l
 
 El MaxPooling reduce la dimensionalidad del espacio de características de $\mathbb{R}^{C \times H \times W}$ a $\mathbb{R}^{C \times H/2 \times W/2}$.
 
-![Figura 4 3](Figura_4_3.png)
+![Figura 4 3](assets/Figura_4_3.png)
 
 > **Nota**
 >
@@ -376,7 +376,7 @@ $$
 
 Cada $\sigma_k$ es la función ReLU, y cada $\text{Pool}_k$ es MaxPooling.
 
-![Secuencia Tranf Lineales CNN](Secuencia_Tranf_Lineales_CNN.png)
+![Secuencia Tranf Lineales CNN](assets/Secuencia_Tranf_Lineales_CNN.png)
 
 > **Nota**
 >
@@ -413,7 +413,7 @@ $$
 $$
 
 
-![Figura 4 5](Figura_4_5.png)
+![Figura 4 5](assets/Figura_4_5.png)
 
 > **Nota**
 >
@@ -425,7 +425,7 @@ $$
 
 Los *features* son las coordenadas en el espacio de características aprendido. La calidad de estos *features* determina el rendimiento de la red. La CNN ajusta sus parámetros para que los *features* de diferentes clases estén bien separados en el espacio de características, facilitando la clasificación.
 
-![Figura 4 6](Figura_4_6.png)
+![Figura 4 6](assets/Figura_4_6.png)
 
 > **Nota**
 >
@@ -457,7 +457,7 @@ Esta función define una superficie (o hipersuperficie) en $\mathbb{R}^{P+1}$. E
 
 ^P\)R elevado a P
 
-![Figura 5 1](Figura_5_1.png)
+![Figura 5 1](assets/Figura_5_1.png)
 
 ^P\)R elevado a P
 
@@ -488,7 +488,7 @@ Cada componente del gradiente indica la dirección y magnitud del cambio en la p
 
 ^P\)R elevado a P
 
-![Figura 5 2](Figura_5_2.png)
+![Figura 5 2](assets/Figura_5_2.png)
 
 ^P\)R elevado a P
 
@@ -514,7 +514,7 @@ Esta es una operación vectorial en $\mathbb{R}^P$: restar un vector (el gradien
 
 Cada paso del gradiente descendente mueve el punto representativo en el espacio de parámetros en la dirección de máxima pendiente negativa, descendiendo por la superficie de pérdida.
 
-![Figura 5 3](Figura_5_3.png)
+![Figura 5 3](assets/Figura_5_3.png)
 
 > **Nota**
 >
@@ -574,7 +574,7 @@ Cada operación es vectorial en $\mathbb{R}^P$.
 
 #### Figura 5.4: Comparación de Trayectorias de Optimización.
 
-![Figura 5 4](Figura_5_4.png)
+![Figura 5 4](assets/Figura_5_4.png)
 
 
 #### Actualización de Parámetros como Operación Vectorial
@@ -600,7 +600,7 @@ Donde $\theta^{(l)}_{i,j}$ es un parámetro en la capa $l$, y $z^{(l+1)}$ es la 
 
 #### Figura 5.5: Flujo de Gradientes en la Retropropagación.
 
-![Figura 5 5](Figura_5_5.png)
+![Figura 5 5](assets/Figura_5_5.png)
 
 
 #### Actualización de Parámetros como Operación Vectorial
@@ -651,7 +651,7 @@ $$
 
 #### Figura 6.1: YOLO en el Espacio Vectorial.
 
-![Figura 6 1](Figura_6_1.png)
+![Figura 6 1](assets/Figura_6_1.png)
 
 
 #### YOLO en el Espacio Vectorial
@@ -674,7 +674,7 @@ $$
 
 #### Figura 6.2: Espacio de las Cajas Delimitadoras.
 
-![Figura 6 2](Figura_6_2.png)
+![Figura 6 2](assets/Figura_6_2.png)
 
 
 #### YOLO en el Espacio Vectorial
@@ -698,7 +698,7 @@ La capacidad de PyTorch para operar en estos espacios vectoriales de manera efic
 
 #### Figura 6.3: Del Espacio de Características a la Detección.
 
-![Figura 6 3](Figura_6_3.png)
+![Figura 6 3](assets/Figura_6_3.png)
 
 
 #### YOLO en el Espacio Vectorial
