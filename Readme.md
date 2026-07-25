@@ -209,12 +209,17 @@ El broadcasting es una extensión de las operaciones vectoriales que permite ope
 
 ![matriz toeplitz v4](assets/matriz_toeplitz_v4.png)
 
-> **Nota**
->
+
+
 
 **Figura 3.1: Convolución como producto matricial con matriz de Toeplitz.**
 
 Cada fila de la matriz de Toeplitz $T(K)$ representa el kernel aplicado en una posición distinta de la imagen. Al multiplicar $T(K)$ por la imagen vectorizada $vec(X)$, cada fila produce un valor del mapa de características. Los nueve resultados obtenidos se reorganizan para formar la matriz $Y^33$.
+
+
+Figura del proceso de concolucion por kernel detector de bordes ---------------------
+
+![matriz toeplitz v4](assets/convolucion.gif)
 
 
 ### Espacio Vectorial de Parámetros
