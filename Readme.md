@@ -4,8 +4,8 @@
 
 **Estructura matemática de una CNN implementada con PyTorch**
 
-**Autor:** Antonio Lam G.  
-**Afiliación:** Informe técnico doctoral en estadística y aprendizaje profundo  
+**Doctorando** Antonio Lam G.  
+**Proyecto:** Trabajo Final del Curso de Redes Neuronales y Deep Aprendizaje (DES333) - Prof. Dr. Jorge Guevara
 **Formato:** versión en Markdown compatible con `README.md` de GitHub.
 
 > Nota: GitHub no compila una presentación Beamer completa. Esta conversión preserva el contenido académico, las fórmulas matemáticas renderizables y las referencias a figuras.
