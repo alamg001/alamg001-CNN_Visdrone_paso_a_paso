@@ -1,12 +1,12 @@
-# Algoritmo "CNN Visdrone paso a paso ALamG.ipynb"
+# Algoritmo "CNN Visdrone paso a paso ALamG.ipynb"  
 
-# Análisis Vectorial y Matricial de una Red Neuronal Convolucional para Clasificación de Objetos en VisDrone
+# Análisis Vectorial y Matricial de una Red Neuronal Convolucional para Clasificación de Objetos en VisDrone  
 
-**Estructura matemática de una CNN implementada con PyTorch**
+**Estructura matemática de una CNN implementada con PyTorch**  
 
 **Doctorando** Antonio Lam G.  
-**Proyecto:** Trabajo Final del Curso de Redes Neuronales y Deep Aprendizaje (DES333) - Prof. Dr. Jorge Guevara
-**Formato:** versión en Markdown compatible con `README.md` de GitHub.
+**Proyecto:** Trabajo Final del Curso de Redes Neuronales y Deep Aprendizaje (DES333) - Prof. Dr. Jorge Guevara  
+**Formato:** versión en Markdown compatible con `README.md` de GitHub.  
 
 > Nota: GitHub no compila una presentación Beamer completa. Esta conversión preserva el contenido académico, las fórmulas matemáticas renderizables y las referencias a figuras.
 
