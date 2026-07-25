@@ -275,7 +275,7 @@ $$
 $$
 
 
-Donde $\mathbf{W}_{\text{toeplitz}}$ es una matriz de Toeplitz (o bloque-circulante) que representa el filtro, y $\mathbf{X}_{\text{vec}}$ es el vector de entrada.
+Donde $\mathbf{W}_T$ es una matriz de Toeplitz (o bloque-circulante) que representa el filtro, y $\mathbf{X}_v$ es el vector de entrada.
 
 
 #### Convolucional como Transformación Lineal
