@@ -449,10 +449,7 @@ Los *features* son las coordenadas en el espacio de características aprendido. 
 
 El entrenamiento de una CNN es un problema de optimización en el espacio de parámetros $\mathbb{R}^P$. La función objetivo es la pérdida empírica.
 
-
-### La Función de Pérdida como Superficie en \texorpdfstring{\(\mathbb{R
-
-^P\)R elevado a P
+### La Función de Pérdida como Superficie en $\mathbb{R}^P$
 
 La función de pérdida $J(\boldsymbol{\theta})$ mapea cada punto en el espacio de parámetros a un escalar:
 
@@ -475,10 +472,7 @@ Esta función define una superficie (o hipersuperficie) en $\mathbb{R}^{P+1}$. E
 
 **Figura 5.1: Superficie de Pérdida en el Espacio de Parámetros.** La función de pérdida define una superficie en el espacio de parámetros. Los mínimos locales y globales corresponden a buenas configuraciones de la red.
 
-
-### El Gradiente como Vector en \texorpdfstring{\(\mathbb{R
-
-^P\)R elevado a P
+### El Gradiente como Vector en ℝᴾ
 
 El gradiente de la pérdida con respecto a los parámetros es un vector en el espacio de parámetros:
 
