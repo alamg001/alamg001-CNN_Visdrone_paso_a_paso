@@ -1,4 +1,4 @@
-# Algoritmo "CNN Visdrone paso a paso ALamG.ipynb"  
+# Algoritmo "CNN Visdrone paso a paso.ipynb"  
 
 # Análisis Vectorial y Matricial de una Red Neuronal Convolucional para Clasificación de Objetos en VisDrone  
 
@@ -218,7 +218,14 @@ Cada fila de la matriz de Toeplitz $T(K)$ representa el kernel aplicado en una p
 
 
 Figura del proceso de concolucion por kernel detector de bordes 
-![proceso de convolucion](assets/convolucion.gif)
+
+
+<p align="center">
+  <img src="assets/convolucion.gif"
+       alt="Proceso de convolución"
+       width="500">
+</p>
+
 
 ### Espacio Vectorial de Parámetros
 
