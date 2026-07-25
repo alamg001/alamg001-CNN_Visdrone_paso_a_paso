@@ -219,7 +219,7 @@ Cada fila de la matriz de Toeplitz $T(K)$ representa el kernel aplicado en una p
 
 Figura del proceso de concolucion por kernel detector de bordes ---------------------
 
-![matriz toeplitz v4](assets/convolucion.gif)
+![proceso de convolucion](assets/convolucion.gif)
 
 
 ### Espacio Vectorial de Parámetros
